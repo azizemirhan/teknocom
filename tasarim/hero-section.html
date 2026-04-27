@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tekno.com — Hero Section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white: #ffffff;
+  --blue: #1991ff;
+  --blue-hover: #0d7ee6;
+  --blue-dark: #0a6cd4;
+  --blue-light: #e8f4ff;
+  --blue-ultra: #f0f8ff;
+  --dark: #0a0f1a;
+  --gray-900: #1a1f2e;
+  --gray-700: #3d4455;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.05);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.07);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.1);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --transition: .3s cubic-bezier(.4,0,.2,1);
+  --max-width: 1360px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  color: var(--gray-900);
+  background: var(--gray-50);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════ */
+.hero {
+  padding: 20px 0 0;
+}
+
+/* ── HERO GRID: Slider + 2 Promo Cards ── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 420px;
+}
+
+/* ── MAIN SLIDER ── */
+.hero-slider {
+  grid-row: 1 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #e0f0ff 0%, #f0f8ff 50%, #dbeafe 100%);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 48px 56px;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity .7s ease, transform .7s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+}
+
+.slide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+.slide-badge svg { width: 14px; height: 14px; }
+
+.slide-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: -.5px;
+}
+
+.slide-title span { color: var(--blue); }
+
+.slide-desc {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 340px;
+}
+
+.slide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: var(--radius-xs);
+  font-size: 14px;
+  font-weight: 700;
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(25,145,255,.3);
+}
+
+.slide-cta:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(25,145,255,.4);
+}
+
+.slide-cta svg {
+  width: 18px; height: 18px;
+  transition: transform var(--transition);
+}
+
+.slide-cta:hover svg { transform: translateX(4px); }
+
+.slide-visual {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Slide-specific product illustrations via SVG */
+.slide-product-graphic {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ── Slide backgrounds ── */
+.slide--1 { background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 40%, #dbeafe 100%); }
+.slide--2 { background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 40%, #d1fae5 100%); }
+.slide--3 { background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 40%, #fef9c3 100%); }
+
+/* ── Slider Controls ── */
+.slider-arrows {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.slider-arrow {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.slider-arrow:hover {
+  background: var(--blue);
+  color: var(--white);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(25,145,255,.3);
+}
+
+.slider-arrow svg { width: 18px; height: 18px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.15);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background: var(--blue);
+  width: 28px;
+  border-radius: 4px;
+}
+
+/* ── PROMO CARDS ── */
+.promo-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 24px 28px;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.promo-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+.promo-card--vr {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 50%, #a5b4fc 100%);
+  color: var(--white);
+}
+
+.promo-card--watch {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--dark);
+}
+
+.promo-card-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.promo-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  margin-bottom: 6px;
+  opacity: .75;
+}
+
+.promo-card--watch .promo-card-label { color: var(--blue); opacity: 1; }
+
+.promo-card-title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.promo-card-price {
+  font-size: 13px;
+  opacity: .8;
+  margin-bottom: 14px;
+}
+
+.promo-card-price strong {
+  font-size: 20px;
+  font-weight: 900;
+  opacity: 1;
+}
+
+.promo-card--watch .promo-card-price { color: var(--gray-500); }
+.promo-card--watch .promo-card-price strong { color: var(--blue); }
+
+.promo-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-xs);
+  font-size: 12px;
+  font-weight: 700;
+  transition: all var(--transition);
+}
+
+.promo-card--vr .promo-card-btn {
+  background: rgba(255,255,255,.2);
+  color: var(--white);
+  backdrop-filter: blur(4px);
+}
+
+.promo-card--vr .promo-card-btn:hover { background: rgba(255,255,255,.35); }
+
+.promo-card--watch .promo-card-btn {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.promo-card--watch .promo-card-btn:hover { background: var(--blue-hover); }
+
+.promo-card-btn svg { width: 14px; height: 14px; }
+
+.promo-card-visual {
+  width: 140px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══ CATEGORY STRIP ═══ */
+.category-strip {
+  margin-top: 20px;
+  padding: 6px 0 20px;
+}
+
+.category-strip-inner {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 0;
+}
+
+.category-strip-inner::-webkit-scrollbar { display: none; }
+
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 120px;
+  flex: 1;
+  padding: 20px 12px 16px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  cursor: pointer;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.cat-item:hover {
+  border-color: var(--blue);
+  background: var(--blue-ultra);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(25,145,255,.1);
+}
+
+.cat-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--gray-50);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  transition: all var(--transition);
+}
+
+.cat-item:hover .cat-icon {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.cat-icon svg { width: 26px; height: 26px; }
+
+.cat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.cat-item:hover .cat-label { color: var(--blue); }
+
+/* ═══ FEATURES STRIP ═══ */
+.features-strip {
+  padding: 0 0 24px;
+}
+
+.features-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-100);
+  transition: all var(--transition);
+}
+
+.feature-item:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 16px rgba(25,145,255,.08);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.feature-icon svg { width: 22px; height: 22px; }
+
+.feature-text h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.feature-text p {
+  font-size: 12px;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════
+   PRODUCT ILLUSTRATIONS (Pure CSS/SVG)
+   ═══════════════════════════════════════ */
+
+/* Laptop shape */
+.illust-laptop {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+}
+
+.laptop-body {
+  width: 280px;
+  height: 180px;
+  background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 6px #0f172a, 0 8px 32px rgba(0,0,0,.15);
+}
+
+.laptop-screen {
+  position: absolute;
+  inset: 10px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--blue) 0%, #60a5fa 30%, #38bdf8 60%, #22d3ee 100%);
+  overflow: hidden;
+}
+
+.laptop-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, transparent 50%);
+}
+
+.laptop-base {
+  width: 310px;
+  height: 12px;
+  background: linear-gradient(to bottom, #94a3b8, #cbd5e1);
+  border-radius: 0 0 6px 6px;
+  margin-left: -15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+/* Phone shape */
+.illust-phone {
+  position: absolute;
+  right: 100px;
+  bottom: 40px;
+}
+
+.phone-body {
+  width: 82px;
+  height: 165px;
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 3px #0f172a, 0 12px 32px rgba(0,0,0,.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-screen {
+  position: absolute;
+  inset: 6px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #8b5cf6, #ec4899, #f97316);
+  overflow: hidden;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 12px;
+  background: #0f172a;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Watch shape */
+.illust-watch {
+  position: absolute;
+  right: 50px;
+  bottom: 24px;
+}
+
+.watch-body {
+  width: 68px;
+  height: 82px;
+  background: linear-gradient(145deg, #e2e8f0, #f1f5f9);
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 3px #cbd5e1, 0 8px 24px rgba(0,0,0,.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.watch-screen {
+  position: absolute;
+  inset: 6px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #10b981, #34d399);
+}
+
+.watch-band-top, .watch-band-bottom {
+  width: 42px;
+  height: 30px;
+  background: linear-gradient(to bottom, #84cc16, #65a30d);
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.watch-band-top { margin-bottom: 4px; border-radius: 6px 6px 0 0; }
+.watch-band-bottom { margin-top: 4px; border-radius: 0 0 6px 6px; }
+
+/* VR shape */
+.illust-vr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vr-body {
+  width: 100px;
+  height: 58px;
+  background: linear-gradient(145deg, #e2e8f0, #ffffff);
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+
+.vr-lens {
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(145deg, #1e293b, #475569);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.3);
+}
+
+.vr-lens--l { left: 18px; }
+.vr-lens--r { right: 18px; }
+
+.vr-strap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 30px;
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+.vr-strap--l { left: -10px; }
+.vr-strap--r { right: -10px; }
+
+/* Smartwatch for promo card */
+.illust-smartwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sw-band-t {
+  width: 36px;
+  height: 24px;
+  background: linear-gradient(to bottom, #84cc16, #65a30d);
+  border-radius: 6px 6px 0 0;
+}
+
+.sw-case {
+  width: 56px;
+  height: 64px;
+  background: linear-gradient(145deg, #e5e7eb, #f9fafb);
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 2px #d1d5db, 0 4px 12px rgba(0,0,0,.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.sw-screen {
+  position: absolute;
+  inset: 5px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #10b981, #34d399, #6ee7b7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sw-crown {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 14px;
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.sw-band-b {
+  width: 36px;
+  height: 24px;
+  background: linear-gradient(to top, #84cc16, #65a30d);
+  border-radius: 0 0 6px 6px;
+}
+
+/* ═══ SLIDE PRODUCT SCENES ═══ */
+
+.scene {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Floating decoration circles */
+.float-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .08;
+}
+
+.scene .float-circle--1 {
+  width: 200px; height: 200px;
+  background: var(--blue);
+  top: -40px; right: -40px;
+}
+
+.scene .float-circle--2 {
+  width: 120px; height: 120px;
+  background: var(--blue);
+  bottom: 20px; right: 60%;
+}
+
+/* Green scene circles */
+.slide--2 .float-circle--1 { background: #10b981; }
+.slide--2 .float-circle--2 { background: #10b981; }
+
+/* Yellow scene circles */
+.slide--3 .float-circle--1 { background: #f59e0b; }
+.slide--3 .float-circle--2 { background: #f59e0b; }
+
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-y-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.slide.active .illust-laptop { animation: float-y-slow 4s ease-in-out infinite; }
+.slide.active .illust-phone { animation: float-y 3.5s ease-in-out infinite .3s; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide.active .slide-badge { animation: fade-up .5s ease both; }
+.slide.active .slide-title { animation: fade-up .5s ease .1s both; }
+.slide.active .slide-desc { animation: fade-up .5s ease .2s both; }
+.slide.active .slide-cta { animation: fade-up .5s ease .3s both; }
+
+/* ═══ AUTO-PLAY PROGRESS BAR ═══ */
+.slider-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--blue);
+  z-index: 10;
+  border-radius: 0 2px 2px 0;
+  transition: none;
+}
+
+.slider-progress.running {
+  animation: progress-fill 5s linear forwards;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .hero-grid { grid-template-columns: 1fr 320px; height: 380px; }
+  .slide-title { font-size: 32px; }
+  .slide { padding: 40px 44px; }
+  .laptop-body { width: 220px; height: 140px; }
+  .laptop-base { width: 250px; }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 360px auto;
+    height: auto;
+  }
+
+  .hero-slider { grid-row: 1; }
+
+  .promo-card--vr,
+  .promo-card--watch {
+    grid-row: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px auto;
+  }
+
+  .hero-slider { grid-column: 1 / -1; }
+
+  .features-strip-inner { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 12px 0 0; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto auto;
+    gap: 12px;
+  }
+
+  .hero-slider { grid-column: 1; }
+
+  .slide { padding: 28px 24px; }
+  .slide-title { font-size: 26px; }
+  .slide-desc { font-size: 13px; margin-bottom: 18px; max-width: 200px; }
+  .slide-badge { font-size: 11px; padding: 5px 12px; }
+  .slide-cta { padding: 12px 22px; font-size: 13px; }
+
+  .scene { width: 45%; }
+  .laptop-body { width: 160px; height: 100px; }
+  .laptop-base { width: 180px; margin-left: -10px; }
+  .phone-body { width: 60px; height: 120px; }
+  .illust-phone { right: 60px; }
+
+  .slider-arrows { bottom: 16px; right: 16px; }
+  .slider-arrow { width: 36px; height: 36px; }
+
+  .promo-card { padding: 20px; }
+  .promo-card-title { font-size: 15px; }
+  .promo-card-visual { width: 100px; }
+
+  .cat-item { min-width: 100px; padding: 16px 10px 14px; }
+  .cat-icon { width: 44px; height: 44px; border-radius: 12px; }
+  .cat-icon svg { width: 22px; height: 22px; }
+  .cat-label { font-size: 12px; }
+
+  .features-strip-inner { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .feature-item { padding: 14px; gap: 10px; }
+  .feature-icon { width: 38px; height: 38px; border-radius: 10px; }
+  .feature-icon svg { width: 18px; height: 18px; }
+  .feature-text h4 { font-size: 12px; }
+  .feature-text p { font-size: 11px; }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .hero-grid { grid-template-rows: 260px auto auto; gap: 10px; }
+
+  .slide { padding: 24px 20px; }
+  .slide-title { font-size: 22px; }
+  .slide-desc { font-size: 12px; max-width: 170px; }
+  .slide-cta { padding: 10px 18px; font-size: 12px; }
+  .slider-dots { bottom: 16px; }
+
+  .scene { width: 40%; opacity: .85; }
+  .laptop-body { width: 120px; height: 76px; }
+  .laptop-base { width: 140px; }
+  .illust-laptop { right: 10px; bottom: 20px; }
+
+  .promo-card { padding: 16px; }
+  .promo-card-title { font-size: 14px; }
+  .promo-card-price strong { font-size: 18px; }
+  .promo-card-visual { width: 80px; }
+
+  .cat-item { min-width: 88px; padding: 14px 8px 12px; }
+  .category-strip { margin-top: 14px; }
+
+  .features-strip-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+
+    <!-- HERO GRID -->
+    <div class="hero-grid">
+
+      <!-- ── MAIN SLIDER ── -->
+      <div class="hero-slider" id="heroSlider">
+
+        <!-- Slide 1: Apple / Bilgisayar -->
+        <div class="slide slide--1 active">
+          <div class="slide-content">
+            <div class="slide-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Yeni Sezon
+            </div>
+            <h2 class="slide-title">Bilgisayar & <span>Laptop</span> Kampanyası</h2>
+            <p class="slide-desc">MacBook, gaming laptop ve ultrabook modellerde kaçırılmayacak fırsatlar.</p>
+            <a href="#" class="slide-cta">
+              Hemen Keşfet
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="scene">
+            <div class="float-circle float-circle--1"></div>
+            <div class="float-circle float-circle--2"></div>
+            <div class="illust-laptop">
+              <div class="laptop-body">
+                <div class="laptop-screen"></div>
+              </div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="illust-phone">
+              <div class="phone-body">
+                <div class="phone-screen">
+                  <div class="phone-notch"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Güvenlik Kamerası -->
+        <div class="slide slide--2">
+          <div class="slide-content">
+            <div class="slide-badge" style="background:#10b981;">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Güvenlik
+            </div>
+            <h2 class="slide-title">Güvenlik <span style="color:#10b981">Kamera</span> Sistemleri</h2>
+            <p class="slide-desc">IP kamera, NVR ve hazır kamera setlerinde profesyonel çözümler.</p>
+            <a href="#" class="slide-cta" style="background:#10b981;box-shadow:0 4px 16px rgba(16,185,129,.3);">
+              Ürünleri İncele
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="scene">
+            <div class="float-circle float-circle--1"></div>
+            <div class="float-circle float-circle--2"></div>
+            <!-- Camera SVG illustration -->
+            <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;right:30px;bottom:40px;width:220px;opacity:.9;" class="illust-laptop">
+              <rect x="60" y="60" width="140" height="90" rx="12" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+              <circle cx="130" cy="100" r="28" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+              <circle cx="130" cy="100" r="18" fill="#1e293b"/>
+              <circle cx="130" cy="100" r="10" fill="#10b981" opacity=".6"/>
+              <circle cx="130" cy="100" r="4" fill="#10b981"/>
+              <rect x="100" y="50" width="60" height="16" rx="6" fill="#334155"/>
+              <circle cx="170" cy="76" r="4" fill="#ef4444" opacity=".8"/>
+              <rect x="30" y="95" width="36" height="10" rx="3" fill="#475569"/>
+              <rect x="10" y="88" width="24" height="24" rx="4" fill="#334155" stroke="#475569" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Slide 3: Telefon -->
+        <div class="slide slide--3">
+          <div class="slide-content">
+            <div class="slide-badge" style="background:#f59e0b;">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Çok Satanlar
+            </div>
+            <h2 class="slide-title">Akıllı <span style="color:#f59e0b">Telefon</span> Modelleri</h2>
+            <p class="slide-desc">Apple, Samsung, Xiaomi ve daha fazla markada en uygun fiyatlar.</p>
+            <a href="#" class="slide-cta" style="background:#f59e0b;box-shadow:0 4px 16px rgba(245,158,11,.3);">
+              Telefonları Gör
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="scene">
+            <div class="float-circle float-circle--1"></div>
+            <div class="float-circle float-circle--2"></div>
+            <!-- Phones illustration -->
+            <div class="illust-phone" style="right:80px;bottom:50px;">
+              <div class="phone-body" style="width:90px;height:180px;border-radius:22px;">
+                <div class="phone-screen" style="inset:7px;border-radius:18px;background:linear-gradient(160deg,#f59e0b,#fbbf24,#fde68a);">
+                  <div class="phone-notch" style="width:44px;height:14px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="illust-laptop" style="right:10px;bottom:65px;">
+              <div class="phone-body" style="width:76px;height:155px;border-radius:20px;background:linear-gradient(145deg,#374151,#4b5563);">
+                <div class="phone-screen" style="inset:6px;border-radius:16px;background:linear-gradient(160deg,#8b5cf6,#a78bfa,#c4b5fd);">
+                  <div class="phone-notch" style="width:36px;height:12px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-dots" id="sliderDots">
+          <div class="slider-dot active" data-index="0"></div>
+          <div class="slider-dot" data-index="1"></div>
+          <div class="slider-dot" data-index="2"></div>
+        </div>
+
+        <div class="slider-arrows">
+          <button class="slider-arrow" id="prevSlide" aria-label="Önceki">
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slider-arrow" id="nextSlide" aria-label="Sonraki">
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <div class="slider-progress running" id="sliderProgress"></div>
+      </div>
+
+      <!-- ── PROMO CARD: VR ── -->
+      <div class="promo-card promo-card--vr">
+        <div class="promo-card-content">
+          <div class="promo-card-label">Sanal Gerçeklik</div>
+          <h3 class="promo-card-title">VR Gözlük & 100+ Oyun</h3>
+          <div class="promo-card-price">Başlangıç fiyatı <strong>₺4.999</strong></div>
+          <a href="#" class="promo-card-btn">
+            İncele
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="promo-card-visual">
+          <div class="illust-vr">
+            <div class="vr-body">
+              <div class="vr-lens vr-lens--l"></div>
+              <div class="vr-lens vr-lens--r"></div>
+              <div class="vr-strap vr-strap--l"></div>
+              <div class="vr-strap vr-strap--r"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PROMO CARD: Smartwatch ── -->
+      <div class="promo-card promo-card--watch">
+        <div class="promo-card-content">
+          <div class="promo-card-label">Akıllı Saat</div>
+          <h3 class="promo-card-title">Akıllı Saatlerde %70'e Varan İndirim</h3>
+          <div class="promo-card-price">Sadece <strong>₺1.299</strong>'den</div>
+          <a href="#" class="promo-card-btn">
+            Alışverişe Başla
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="promo-card-visual">
+          <div class="illust-smartwatch">
+            <div class="sw-band-t"></div>
+            <div class="sw-case">
+              <div class="sw-screen">
+                <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="sw-crown"></div>
+            </div>
+            <div class="sw-band-b"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /hero-grid -->
+
+    <!-- ═══ CATEGORY STRIP ═══ -->
+    <div class="category-strip">
+      <div class="category-strip-inner">
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <span class="cat-label">Laptop</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M9 22h6M12 18h.01"/></svg>
+          </div>
+          <span class="cat-label">Bilgisayar</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 3H6a2 2 0 00-2 2v14l4-3h10a2 2 0 002-2V5a2 2 0 00-2-2z"/><path d="M8 9h8M8 13h4"/></svg>
+          </div>
+          <span class="cat-label">Klavye</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <span class="cat-label">Telefon</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <span class="cat-label">Hoparlör</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <span class="cat-label">Akıllı Saat</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+          </div>
+          <span class="cat-label">Kulaklık</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <span class="cat-label">Kamera</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="cat-label">Güvenlik</span>
+        </a>
+        <a href="#" class="cat-item">
+          <div class="cat-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg>
+          </div>
+          <span class="cat-label">TV & Ses</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ FEATURES STRIP ═══ -->
+    <div class="features-strip">
+      <div class="features-strip-inner">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Hızlı & Ücretsiz Kargo</h4>
+            <p>199₺ üzeri siparişlerde</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Güvenli Ödeme</h4>
+            <p>256-bit SSL şifreleme</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>7/24 Destek</h4>
+            <p>Canlı destek hattı</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div class="feature-text">
+            <h4>Kolay İade</h4>
+            <p>14 gün içinde ücretsiz</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ═══ HERO SLIDER ═══ */
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.slider-dot');
+const progress = document.getElementById('sliderProgress');
+let current = 0;
+let autoplayTimer = null;
+const SLIDE_DURATION = 5000;
+
+function goToSlide(index) {
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+
+  current = (index + slides.length) % slides.length;
+
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+
+  // Reset progress
+  progress.classList.remove('running');
+  void progress.offsetWidth; // force reflow
+  progress.classList.add('running');
+
+  resetAutoplay();
+}
+
+function nextSlide() { goToSlide(current + 1); }
+function prevSlide() { goToSlide(current - 1); }
+
+function resetAutoplay() {
+  clearInterval(autoplayTimer);
+  autoplayTimer = setInterval(nextSlide, SLIDE_DURATION);
+}
+
+// Init
+resetAutoplay();
+
+// Controls
+document.getElementById('nextSlide').addEventListener('click', nextSlide);
+document.getElementById('prevSlide').addEventListener('click', prevSlide);
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => goToSlide(+dot.dataset.index));
+});
+
+// Pause on hover
+const slider = document.getElementById('heroSlider');
+slider.addEventListener('mouseenter', () => {
+  clearInterval(autoplayTimer);
+  progress.style.animationPlayState = 'paused';
+});
+
+slider.addEventListener('mouseleave', () => {
+  progress.style.animationPlayState = 'running';
+  resetAutoplay();
+});
+
+// Touch swipe
+let touchStartX = 0;
+let touchEndX = 0;
+
+slider.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+slider.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > 50) {
+    diff > 0 ? nextSlide() : prevSlide();
+  }
+}, { passive: true });
+
+// Keyboard
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+</script>
+</body>
+</html>

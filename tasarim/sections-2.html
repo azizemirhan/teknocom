@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tekno.com — Anasayfa Ek Sectionlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white: #ffffff;
+  --blue: #1991ff;
+  --blue-hover: #0d7ee6;
+  --blue-dark: #0a6cd4;
+  --blue-light: #e8f4ff;
+  --blue-ultra: #f0f8ff;
+  --dark: #0a0f1a;
+  --gray-900: #1a1f2e;
+  --gray-700: #3d4455;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --green: #10b981;
+  --red: #ef4444;
+  --orange: #f59e0b;
+  --purple: #8b5cf6;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.1);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --transition: .3s cubic-bezier(.4,0,.2,1);
+  --max-width: 1360px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  color: var(--gray-900);
+  background: var(--gray-50);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.section-icon svg { width: 22px; height: 22px; }
+
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -.3px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  color: var(--gray-400);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.section-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  padding: 8px 18px;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition);
+}
+
+.section-view-all:hover { background: var(--blue-light); }
+.section-view-all svg { width: 16px; height: 16px; transition: transform var(--transition); }
+.section-view-all:hover svg { transform: translateX(3px); }
+
+/* Animations */
+.anim-in {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.anim-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 1: GÜVENLİK KAMERASI ÇÖZÜMLERİ
+   ═══════════════════════════════════════════════════════ */
+.section-security {
+  padding: 52px 0;
+  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+}
+
+.security-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Big feature card */
+.sec-feature {
+  grid-row: 1 / 3;
+  border-radius: var(--radius);
+  background: linear-gradient(155deg, #0f172a 0%, #1e293b 60%, #334155 100%);
+  color: var(--white);
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 460px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.sec-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+/* Decorative grid pattern */
+.sec-feature::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+}
+
+/* Camera illustration */
+.sec-cam-illust {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 1;
+}
+
+.sec-cam {
+  width: 160px;
+  height: 100px;
+  position: relative;
+}
+
+.sec-cam-body {
+  width: 120px;
+  height: 72px;
+  background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  position: absolute;
+  right: 0;
+  top: 14px;
+  backdrop-filter: blur(4px);
+}
+
+.sec-cam-lens-ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sec-cam-lens {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue) 0%, #0d4e8a 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(25,145,255,.4);
+}
+
+.sec-cam-lens::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.3);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+.sec-cam-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  box-shadow: 0 0 8px rgba(239,68,68,.6);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
+}
+
+.sec-cam-mount {
+  width: 20px;
+  height: 28px;
+  background: rgba(255,255,255,.08);
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sec-cam-bracket {
+  width: 36px;
+  height: 8px;
+  background: rgba(255,255,255,.06);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Floating scan lines */
+.scan-line {
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  opacity: .3;
+  animation: scan 3s ease-in-out infinite;
+}
+
+.scan-line--1 { top: 30%; right: 20px; animation-delay: 0s; }
+.scan-line--2 { top: 55%; right: 40px; animation-delay: 1s; width: 160px; }
+.scan-line--3 { top: 75%; right: 10px; animation-delay: 2s; width: 180px; }
+
+@keyframes scan {
+  0%, 100% { opacity: 0; transform: translateX(20px); }
+  50% { opacity: .3; transform: translateX(0); }
+}
+
+.sec-feature-content {
+  position: relative;
+  z-index: 2;
+}
+
+.sec-feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.sec-feature-badge svg { width: 14px; height: 14px; }
+
+.sec-feature-title {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.sec-feature-title span { color: var(--blue); }
+
+.sec-feature-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 360px;
+}
+
+.sec-feature-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 13px 28px;
+  border-radius: var(--radius-xs);
+  font-size: 14px;
+  font-weight: 700;
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(25,145,255,.3);
+}
+
+.sec-feature-btn:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(25,145,255,.4);
+}
+
+.sec-feature-btn svg { width: 16px; height: 16px; }
+
+/* Smaller security cards */
+.sec-card {
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.sec-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sec-card--sets {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+}
+
+.sec-card--bayi {
+  background: linear-gradient(135deg, var(--blue), #38bdf8);
+  color: var(--white);
+}
+
+.sec-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-card--sets .sec-card-icon {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.sec-card--bayi .sec-card-icon {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+}
+
+.sec-card-icon svg { width: 28px; height: 28px; }
+
+.sec-card-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.sec-card-desc {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sec-card--sets .sec-card-desc { color: var(--gray-500); }
+.sec-card--bayi .sec-card-desc { opacity: .75; }
+
+.sec-card-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: all var(--transition);
+}
+
+.sec-card--sets .sec-card-arrow {
+  background: var(--gray-100);
+  color: var(--gray-400);
+}
+
+.sec-card--sets:hover .sec-card-arrow {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.sec-card--bayi .sec-card-arrow {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+}
+
+.sec-card--bayi:hover .sec-card-arrow {
+  background: rgba(255,255,255,.3);
+}
+
+.sec-card-arrow svg { width: 16px; height: 16px; }
+
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 2: KOLEKSİYONLAR (3 Showcase Cards)
+   ═══════════════════════════════════════════════════════ */
+.section-collections {
+  padding: 52px 0;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.collection-card {
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.collection-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.collection-card:hover::after { opacity: 1; }
+
+/* Visual area */
+.coll-visual {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+
+.collection-card:hover .coll-visual {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.coll-content {
+  position: relative;
+  z-index: 2;
+}
+
+.coll-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.coll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  border-radius: var(--radius-xs);
+  font-size: 13px;
+  font-weight: 700;
+  transition: all var(--transition);
+  align-self: flex-start;
+}
+
+.coll-btn svg { width: 16px; height: 16px; transition: transform var(--transition); }
+.coll-btn:hover svg { transform: translateX(3px); }
+
+/* Card 1: Smartphones */
+.coll--phone {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--dark);
+}
+
+.coll--phone .coll-btn {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.coll--phone .coll-btn:hover { background: var(--gray-900); }
+
+/* Card 2: Earbuds */
+.coll--earbuds {
+  background: linear-gradient(155deg, #1e293b 0%, #334155 100%);
+  color: var(--white);
+}
+
+.coll--earbuds .coll-btn {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.coll--earbuds .coll-btn:hover { box-shadow: 0 4px 16px rgba(0,0,0,.2); }
+
+/* Card 3: Speakers */
+.coll--speaker {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--dark);
+}
+
+.coll--speaker .coll-btn {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.coll--speaker .coll-btn:hover { background: var(--blue-hover); }
+
+/* Collection illustrations */
+.coll-phone-illust {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.cp-phone {
+  width: 58px;
+  height: 108px;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.cp-screen {
+  position: absolute;
+  inset: 4px;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.cp-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 7px;
+  border-radius: 0 0 7px 7px;
+  z-index: 1;
+}
+
+.cp-phone--1 { background: linear-gradient(145deg, #e5e7eb, #f3f4f6); }
+.cp-phone--1 .cp-screen { background: linear-gradient(160deg, #dbeafe, #bfdbfe); }
+.cp-phone--1 .cp-notch { background: #e5e7eb; }
+
+.cp-phone--2 {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  width: 64px;
+  height: 120px;
+  border-radius: 16px;
+}
+.cp-phone--2 .cp-screen { background: linear-gradient(160deg, #f59e0b, #fbbf24, #fde68a); inset: 5px; border-radius: 12px; }
+.cp-phone--2 .cp-notch { background: #1e293b; width: 26px; height: 8px; }
+
+/* Earbuds illustration */
+.coll-earbuds-illust { position: relative; width: 120px; height: 100px; }
+
+.earbud-case {
+  width: 80px;
+  height: 56px;
+  background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px 14px 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  backdrop-filter: blur(4px);
+}
+
+.earbud-case-lid {
+  width: 80px;
+  height: 18px;
+  background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.08));
+  border: 1px solid rgba(255,255,255,.12);
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.earbud-led {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green);
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(16,185,129,.6);
+}
+
+.earbud {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.15);
+  position: absolute;
+  top: 6px;
+}
+
+.earbud--l { left: 22px; }
+.earbud--r { right: 22px; }
+
+.earbud-stem {
+  width: 6px;
+  height: 14px;
+  background: rgba(255,255,255,.15);
+  border-radius: 3px;
+  position: absolute;
+  top: 24px;
+}
+
+.earbud-stem--l { left: 30px; }
+.earbud-stem--r { right: 30px; }
+
+/* Speaker illustration */
+.coll-speaker-illust { position: relative; }
+
+.coll-spk {
+  width: 84px;
+  height: 100px;
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+}
+
+.coll-spk-grill {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid #475569;
+  position: relative;
+}
+
+.coll-spk-grill::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #475569;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coll-spk-handle {
+  width: 40px;
+  height: 14px;
+  border: 3px solid #64748b;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.coll-spk-accent {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d4a054;
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 3: MÜŞTERİ DEĞERLENDİRMELERİ
+   ═══════════════════════════════════════════════════════ */
+.section-reviews {
+  padding: 52px 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+/* Stats bar */
+.review-stats {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 36px;
+  padding: 24px 32px;
+  background: var(--blue-ultra);
+  border-radius: var(--radius);
+  border: 1px solid var(--blue-light);
+}
+
+.review-stat-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.review-big-num {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.review-big-info { display: flex; flex-direction: column; gap: 2px; }
+
+.review-big-stars {
+  display: flex;
+  gap: 2px;
+  color: #fbbf24;
+}
+
+.review-big-stars svg { width: 18px; height: 18px; }
+
+.review-big-count {
+  font-size: 13px;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.review-stat-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--blue);
+  opacity: .15;
+  flex-shrink: 0;
+}
+
+.review-stat-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.review-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-bar-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+  width: 12px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.review-bar-label svg { width: 10px; height: 10px; color: #fbbf24; display: inline; vertical-align: middle; }
+
+.review-bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 200px;
+}
+
+.review-bar-fill {
+  height: 100%;
+  background: #fbbf24;
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.review-bar-count {
+  font-size: 11px;
+  color: var(--gray-400);
+  font-weight: 500;
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.review-stat-highlights {
+  display: flex;
+  gap: 32px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.review-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-highlight-num {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.review-highlight-label {
+  font-size: 11px;
+  color: var(--gray-400);
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Reviews cards */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.review-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(25,145,255,.08);
+  background: var(--white);
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.review-user-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.review-user-date {
+  font-size: 11px;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.review-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--green);
+  margin-left: auto;
+}
+
+.review-verified svg { width: 14px; height: 14px; }
+
+.review-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 12px;
+  color: #fbbf24;
+}
+
+.review-stars svg { width: 14px; height: 14px; }
+.review-stars .empty { color: var(--gray-200); }
+
+.review-product-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--blue-light);
+  color: var(--blue);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.review-text {
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.review-helpful {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.review-helpful-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-400);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+
+.review-helpful-btn:hover {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.review-helpful-btn svg { width: 14px; height: 14px; }
+
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 4: KAMPANYA BANNER (Full-Width)
+   ═══════════════════════════════════════════════════════ */
+.section-campaign {
+  padding: 52px 0;
+}
+
+.campaign-banner {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 40%, #f8fafc 100%);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.campaign-banner:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Decorative circles */
+.campaign-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(25,145,255,.08);
+}
+
+.campaign-circle--1 { width: 400px; height: 400px; right: -60px; top: -120px; }
+.campaign-circle--2 { width: 300px; height: 300px; right: 0; top: -40px; }
+.campaign-circle--3 { width: 200px; height: 200px; right: 60px; top: 20px; }
+
+.campaign-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px 56px;
+  max-width: 520px;
+}
+
+.campaign-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.campaign-tag svg { width: 14px; height: 14px; }
+
+.campaign-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 10px;
+  letter-spacing: -.5px;
+}
+
+.campaign-title span { color: var(--blue); }
+
+.campaign-desc {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.campaign-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.campaign-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: var(--radius-xs);
+  font-size: 14px;
+  font-weight: 700;
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(25,145,255,.3);
+}
+
+.campaign-btn-primary:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(25,145,255,.4);
+}
+
+.campaign-btn-primary svg { width: 16px; height: 16px; }
+
+.campaign-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray-700);
+  padding: 14px 20px;
+  border-radius: var(--radius-xs);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+  border: 1px solid var(--gray-300);
+}
+
+.campaign-btn-secondary:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-light);
+}
+
+.campaign-btn-secondary svg { width: 16px; height: 16px; }
+
+/* Phone visual */
+.campaign-visual {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.cv-phone {
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 16px 48px rgba(0,0,0,.12);
+}
+
+.cv-phone--1 {
+  width: 90px;
+  height: 175px;
+  background: linear-gradient(145deg, #e2e8f0, #f1f5f9);
+}
+
+.cv-phone--2 {
+  width: 100px;
+  height: 195px;
+  background: linear-gradient(145deg, #1e293b, #334155);
+}
+
+.cv-screen {
+  position: absolute;
+  inset: 6px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.cv-phone--1 .cv-screen {
+  background: linear-gradient(160deg, #dbeafe, #bfdbfe, #93c5fd);
+}
+
+.cv-phone--2 .cv-screen {
+  background: linear-gradient(160deg, var(--blue), #38bdf8, #7dd3fc);
+}
+
+.cv-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+
+.cv-phone--1 .cv-notch { width: 36px; background: #e2e8f0; }
+.cv-phone--2 .cv-notch { width: 40px; background: #1e293b; }
+
+/* Countdown timer */
+.campaign-countdown {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.countdown-num {
+  width: 48px;
+  height: 48px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.countdown-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.countdown-sep {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--gray-300);
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 1200px) {
+  .review-stat-highlights { gap: 24px; }
+  .campaign-visual { right: 30px; }
+  .cv-phone--1 { width: 76px; height: 148px; }
+  .cv-phone--2 { width: 86px; height: 168px; }
+}
+
+@media (max-width: 1024px) {
+  .security-layout { grid-template-columns: 1fr; }
+  .sec-feature { min-height: 340px; grid-row: auto; }
+
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .review-stats { flex-wrap: wrap; gap: 24px; }
+  .review-stat-divider { display: none; }
+  .review-stat-highlights { margin-left: 0; width: 100%; justify-content: space-around; }
+
+  .campaign-visual { display: none; }
+  .campaign-content { max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+
+  .section-header { margin-bottom: 20px; }
+  .section-title { font-size: 20px; }
+  .section-icon { width: 38px; height: 38px; border-radius: 10px; }
+  .section-icon svg { width: 18px; height: 18px; }
+
+  .section-security,
+  .section-collections,
+  .section-reviews,
+  .section-campaign { padding: 36px 0; }
+
+  .sec-feature { padding: 28px 24px; min-height: 300px; }
+  .sec-feature-title { font-size: 24px; }
+  .sec-cam-illust { top: 20px; right: 20px; }
+  .sec-cam { width: 120px; height: 76px; }
+  .sec-cam-body { width: 90px; height: 54px; }
+  .sec-cam-lens-ring { width: 32px; height: 32px; }
+  .sec-cam-lens { width: 20px; height: 20px; }
+
+  .collections-grid { grid-template-columns: 1fr; gap: 12px; }
+  .collection-card { min-height: 220px; padding: 28px 24px; }
+  .coll-title { font-size: 18px; }
+
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  .review-stats { padding: 20px; gap: 16px; }
+  .review-big-num { font-size: 36px; }
+
+  .campaign-banner { min-height: 240px; }
+  .campaign-content { padding: 32px 24px; }
+  .campaign-title { font-size: 26px; }
+  .campaign-desc { font-size: 13px; }
+  .campaign-actions { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  .campaign-countdown { gap: 6px; }
+  .countdown-num { width: 40px; height: 40px; font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .section-title { font-size: 18px; }
+
+  .sec-feature-title { font-size: 20px; }
+  .sec-card { flex-direction: column; text-align: center; gap: 12px; }
+  .sec-card-arrow { margin-left: 0; }
+
+  .coll-visual { opacity: .7; right: 10px; }
+  .coll-title { font-size: 17px; }
+
+  .review-stat-highlights { gap: 20px; }
+  .review-highlight-num { font-size: 20px; }
+
+  .campaign-title { font-size: 22px; }
+  .campaign-btn-primary, .campaign-btn-secondary { padding: 12px 20px; font-size: 13px; }
+
+  .countdown-num { width: 36px; height: 36px; font-size: 14px; border-radius: 8px; }
+  .countdown-label { font-size: 9px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 1: GÜVENLİK KAMERASI ÇÖZÜMLERİ
+     ═══════════════════════════════════════════════════════ -->
+<section class="section-security anim-in">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-icon" style="background:#fef2f2;color:#ef4444;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h2 class="section-title">Güvenlik Kamerası Çözümleri</h2>
+          <p class="section-subtitle">Profesyonel güvenlik sistemleri ve hazır kamera setleri</p>
+        </div>
+      </div>
+      <a href="#" class="section-view-all">
+        Tüm Ürünler
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <div class="security-layout">
+
+      <!-- Big Feature -->
+      <div class="sec-feature">
+        <div class="scan-line scan-line--1"></div>
+        <div class="scan-line scan-line--2"></div>
+        <div class="scan-line scan-line--3"></div>
+
+        <div class="sec-cam-illust">
+          <div class="sec-cam">
+            <div class="sec-cam-mount"></div>
+            <div class="sec-cam-body">
+              <div class="sec-cam-lens-ring">
+                <div class="sec-cam-lens"></div>
+              </div>
+              <div class="sec-cam-led"></div>
+            </div>
+            <div class="sec-cam-bracket"></div>
+          </div>
+        </div>
+
+        <div class="sec-feature-content">
+          <div class="sec-feature-badge">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Profesyonel Çözüm
+          </div>
+          <h3 class="sec-feature-title">Akıllı Güvenlik <span>Kamera Sistemleri</span></h3>
+          <p class="sec-feature-desc">IP kamera, NVR, DVR ve akıllı algılama özellikli kamera çözümleriyle evinizi ve iş yerinizi 7/24 koruma altına alın.</p>
+          <a href="#" class="sec-feature-btn">
+            Tüm Sistemleri İncele
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card: Hazır Setler -->
+      <div class="sec-card sec-card--sets">
+        <div class="sec-card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div>
+          <h4 class="sec-card-title">Hazır Kamera Setleri</h4>
+          <p class="sec-card-desc">2, 4, 8 ve 16 kameralı paket çözümler. Kuruluma hazır, uygun fiyatlı profesyonel setler.</p>
+        </div>
+        <div class="sec-card-arrow">
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+      <!-- Card: Bayi -->
+      <div class="sec-card sec-card--bayi">
+        <div class="sec-card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <h4 class="sec-card-title">Bayi & Proje Çözümleri</h4>
+          <p class="sec-card-desc">Toplu alımlarda özel fiyatlar ve proje bazlı güvenlik sistemi tasarımı.</p>
+        </div>
+        <div class="sec-card-arrow">
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 2: ÖNE ÇIKAN KOLEKSİYONLAR
+     ═══════════════════════════════════════════════════════ -->
+<section class="section-collections anim-in">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-icon" style="background:#f3e8ff;color:#8b5cf6;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <div>
+          <h2 class="section-title">Öne Çıkan Koleksiyonlar</h2>
+          <p class="section-subtitle">Kategorilere özel seçkin ürün koleksiyonları</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="collections-grid">
+
+      <!-- Collection 1: Smartphones -->
+      <div class="collection-card coll--phone">
+        <div class="coll-visual">
+          <div class="coll-phone-illust">
+            <div class="cp-phone cp-phone--1">
+              <div class="cp-screen"></div>
+              <div class="cp-notch"></div>
+            </div>
+            <div class="cp-phone cp-phone--2">
+              <div class="cp-screen"></div>
+              <div class="cp-notch"></div>
+            </div>
+          </div>
+        </div>
+        <div class="coll-content">
+          <h3 class="coll-title">Geleceğin Tasarımı<br>Akıllı Telefonlar</h3>
+          <a href="#" class="coll-btn">
+            Keşfet
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Collection 2: Earbuds -->
+      <div class="collection-card coll--earbuds">
+        <div class="coll-visual">
+          <div class="coll-earbuds-illust">
+            <div class="earbud earbud--l"></div>
+            <div class="earbud earbud--r"></div>
+            <div class="earbud-stem earbud-stem--l"></div>
+            <div class="earbud-stem earbud-stem--r"></div>
+            <div class="earbud-case-lid"></div>
+            <div class="earbud-case">
+              <div class="earbud-led"></div>
+            </div>
+          </div>
+        </div>
+        <div class="coll-content">
+          <h3 class="coll-title">Yaşam Tarzınız<br>İçin Kulaklıklar</h3>
+          <a href="#" class="coll-btn">
+            Keşfet
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Collection 3: Speakers -->
+      <div class="collection-card coll--speaker">
+        <div class="coll-visual">
+          <div class="coll-speaker-illust">
+            <div class="coll-spk">
+              <div class="coll-spk-handle"></div>
+              <div class="coll-spk-grill"></div>
+              <div class="coll-spk-accent"></div>
+            </div>
+          </div>
+        </div>
+        <div class="coll-content">
+          <h3 class="coll-title">Müziği Hayata<br>Geçirenler</h3>
+          <a href="#" class="coll-btn">
+            Keşfet
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 3: MÜŞTERİ DEĞERLENDİRMELERİ
+     ═══════════════════════════════════════════════════════ -->
+<section class="section-reviews anim-in">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-icon" style="background:#fefce8;color:#eab308;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div>
+          <h2 class="section-title">Müşteri Değerlendirmeleri</h2>
+          <p class="section-subtitle">Gerçek kullanıcılardan doğrulanmış alıcı yorumları</p>
+        </div>
+      </div>
+      <a href="#" class="section-view-all">
+        Tüm Yorumlar
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="review-stats">
+      <div class="review-stat-main">
+        <span class="review-big-num">4.8</span>
+        <div class="review-big-info">
+          <div class="review-big-stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          </div>
+          <span class="review-big-count">12.847 değerlendirme</span>
+        </div>
+      </div>
+
+      <div class="review-stat-divider"></div>
+
+      <div class="review-stat-bars">
+        <div class="review-bar-row">
+          <span class="review-bar-label">5</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:78%"></div></div>
+          <span class="review-bar-count">9.981</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">4</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:14%"></div></div>
+          <span class="review-bar-count">1.799</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">3</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:5%"></div></div>
+          <span class="review-bar-count">642</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">2</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:2%"></div></div>
+          <span class="review-bar-count">257</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">1</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:1%"></div></div>
+          <span class="review-bar-count">168</span>
+        </div>
+      </div>
+
+      <div class="review-stat-divider"></div>
+
+      <div class="review-stat-highlights">
+        <div class="review-highlight">
+          <span class="review-highlight-num">%97</span>
+          <span class="review-highlight-label">Memnuniyet</span>
+        </div>
+        <div class="review-highlight">
+          <span class="review-highlight-num">%94</span>
+          <span class="review-highlight-label">Tavsiye Eder</span>
+        </div>
+        <div class="review-highlight">
+          <span class="review-highlight-num">1.2 gün</span>
+          <span class="review-highlight-label">Ort. Teslimat</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Cards -->
+    <div class="reviews-grid">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);">AY</div>
+          <div>
+            <div class="review-user-name">Ahmet Y.</div>
+            <div class="review-user-date">2 gün önce</div>
+          </div>
+          <span class="review-verified">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Doğrulanmış
+          </span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+        </div>
+        <span class="review-product-tag">Samsung Galaxy S24 Ultra</span>
+        <p class="review-text">Kamera kalitesi gerçekten inanılmaz. Gece modunda bile harika fotoğraflar çekebiliyorum. Kargo da çok hızlı geldi, teşekkürler Tekno.com!</p>
+        <div class="review-helpful">
+          <button class="review-helpful-btn">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Faydalı (24)
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#10b981,#34d399);">SE</div>
+          <div>
+            <div class="review-user-name">Selin E.</div>
+            <div class="review-user-date">5 gün önce</div>
+          </div>
+          <span class="review-verified">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Doğrulanmış
+          </span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+        </div>
+        <span class="review-product-tag">Sony WH-1000XM5</span>
+        <p class="review-text">Gürültü engelleme özelliği mükemmel seviyede. Ofiste tam bir sessizlik sağlıyor. Ses kalitesi de üst düzey, kesinlikle tavsiye ederim.</p>
+        <div class="review-helpful">
+          <button class="review-helpful-btn">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Faydalı (18)
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">MK</div>
+          <div>
+            <div class="review-user-name">Mehmet K.</div>
+            <div class="review-user-date">1 hafta önce</div>
+          </div>
+          <span class="review-verified">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Doğrulanmış
+          </span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg class="empty" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+        </div>
+        <span class="review-product-tag">4 Kameralı Güvenlik Seti</span>
+        <p class="review-text">Dükkanım için aldım, kurulumu çok kolaydı. Gece görüşü gayet net ve uygulama üzerinden her yerde izleyebiliyorum. Fiyat/performans olarak harika.</p>
+        <div class="review-helpful">
+          <button class="review-helpful-btn">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Faydalı (31)
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">ZD</div>
+          <div>
+            <div class="review-user-name">Zeynep D.</div>
+            <div class="review-user-date">1 hafta önce</div>
+          </div>
+          <span class="review-verified">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Doğrulanmış
+          </span>
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 5.64L18 7.24l-4 4.36.94 5.66L10 14.67l-4.94 2.6.94-5.66-4-4.36 5.61-.6L10 1z"/></svg>
+        </div>
+        <span class="review-product-tag">Apple Watch Ultra 2</span>
+        <p class="review-text">Spor yaparken harika bir yardımcı. GPS doğruluğu ve batarya ömrü beklentilerimi aştı. Tekno.com'dan alışveriş her zaman güvenli ve hızlı.</p>
+        <div class="review-helpful">
+          <button class="review-helpful-btn">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+            Faydalı (15)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 4: BÜYÜK KAMPANYA BANNER
+     ═══════════════════════════════════════════════════════ -->
+<section class="section-campaign anim-in">
+  <div class="container">
+    <div class="campaign-banner">
+
+      <div class="campaign-circle campaign-circle--1"></div>
+      <div class="campaign-circle campaign-circle--2"></div>
+      <div class="campaign-circle campaign-circle--3"></div>
+
+      <div class="campaign-content">
+        <span class="campaign-tag">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+          Sınırlı Süre
+        </span>
+
+        <h2 class="campaign-title">Yaz Kampanyası<br><span>%20'ye Varan İndirimler</span></h2>
+        <p class="campaign-desc">Seçili akıllı telefon, tablet ve aksesuarlarda kaçırılmayacak fırsatlar. Stoklar sınırlı!</p>
+
+        <div class="campaign-countdown" id="countdown">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">03</span>
+            <span class="countdown-label">Gün</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">14</span>
+            <span class="countdown-label">Saat</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-mins">27</span>
+            <span class="countdown-label">Dakika</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-secs">45</span>
+            <span class="countdown-label">Saniye</span>
+          </div>
+        </div>
+
+        <div class="campaign-actions">
+          <a href="#" class="campaign-btn-primary">
+            Kampanyayı Keşfet
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="campaign-btn-secondary">
+            Tüm Ürünleri Gör
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="campaign-visual">
+        <div class="cv-phone cv-phone--1">
+          <div class="cv-screen"></div>
+          <div class="cv-notch"></div>
+        </div>
+        <div class="cv-phone cv-phone--2">
+          <div class="cv-screen"></div>
+          <div class="cv-notch"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+/* ═══ Scroll Animations ═══ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.anim-in').forEach(el => observer.observe(el));
+
+/* ═══ Countdown Timer ═══ */
+function startCountdown() {
+  // 3 days from now
+  const end = new Date();
+  end.setDate(end.getDate() + 3);
+  end.setHours(end.getHours() + 14);
+  end.setMinutes(end.getMinutes() + 27);
+
+  function update() {
+    const now = new Date();
+    let diff = Math.max(0, Math.floor((end - now) / 1000));
+
+    const days = Math.floor(diff / 86400); diff %= 86400;
+    const hours = Math.floor(diff / 3600); diff %= 3600;
+    const mins = Math.floor(diff / 60);
+    const secs = diff % 60;
+
+    const pad = n => String(n).padStart(2, '0');
+
+    document.getElementById('cd-days').textContent = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-mins').textContent = pad(mins);
+    document.getElementById('cd-secs').textContent = pad(secs);
+  }
+
+  update();
+  setInterval(update, 1000);
+}
+
+startCountdown();
+</script>
+</body>
+</html>
