@@ -2,7 +2,7 @@
 # Gerekli: npm i && npx wrangler login && npm run deploy
 # https://developers.cloudflare.com/workers/static-assets/
 
-name = "lazhemturizm"
+name = "teknocom"
 compatibility_date = "2025-10-01"
 # main yok: assets-only Worker; HTML/CSS/gorseller edge'den servis edilir
 
