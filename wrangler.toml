@@ -1,0 +1,12 @@
+# Cloudflare Worker - sadece statik dosyalar (Static Assets)
+# Gerekli: npm i && npx wrangler login && npm run deploy
+# https://developers.cloudflare.com/workers/static-assets/
+
+name = "lazhemturizm"
+compatibility_date = "2025-10-01"
+# main yok: assets-only Worker; HTML/CSS/gorseller edge'den servis edilir
+
+[assets]
+# Yalnizca `public/`: node_modules / araclar yuklenmez, deploy hizli kalir
+directory = "./public"
+# Cok sayfali site: bilinmeyen URL'ler 404; SPA gerekirse: not_found_handling = "single-page-application"
