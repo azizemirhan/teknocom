@@ -7,6 +7,6 @@ compatibility_date = "2025-10-01"
 # main yok: assets-only Worker; HTML/CSS/gorseller edge'den servis edilir
 
 [assets]
-# Yalnizca `public/`: node_modules / araclar yuklenmez, deploy hizli kalir
-directory = "./public"
+# Bu projede statik dosyalar repo kokunde oldugu icin kok dizin kullaniliyor
+directory = "./"
 # Cok sayfali site: bilinmeyen URL'ler 404; SPA gerekirse: not_found_handling = "single-page-application"
